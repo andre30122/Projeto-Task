@@ -7,8 +7,8 @@ WORKDIR /app
 # Garante o buffer imediato de logs
 ENV PYTHONUNBUFFERED=1
 
-# Injeta o código local no container
-COPY src/ /app/src/
+# Copia todos os ficheiros do projeto para o container
+COPY . .
 
-# O gatilho que dispara a execução
+# O gatilho que dispara a execução do main.py na pasta src
 CMD ["python", "src/main.py"]
